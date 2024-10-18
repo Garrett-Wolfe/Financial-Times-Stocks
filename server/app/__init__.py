@@ -13,12 +13,9 @@ def create_app(config_class=Config):
     from app.routes import main_bp
     app.register_blueprint(main_bp)
 
-    @app.route('/')
-    def serve():
-        return send_from_directory(app.static_folder, 'index.html')
-
-    @app.errorhandler(404)
-    def not_found(e):
+    @app.route('/', defaults={'path': ''})
+    @app.route('/<path:path>')
+    def catch_all(path):
         return send_from_directory(app.static_folder, 'index.html')
 
     return app

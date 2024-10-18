@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { User } from "../../../types/models/User";
 import QueryPage from "./Query";
 
 function MainPage() {

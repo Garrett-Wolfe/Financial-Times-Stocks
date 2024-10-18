@@ -1,10 +1,10 @@
-"use client"
-
 import { useState, useEffect } from 'react'
 import { Input } from "./ui/input"
 import { Search, Briefcase, User } from "lucide-react"
 import { Line, LineChart, ResponsiveContainer } from 'recharts'
 import { Button } from "./ui/button"
+import ftLogo from '../assets/ft_logo.jpg';
+
 
 const dummyData = [
   { ticker: "AAPL", price: 182.52, change: 1.87, percentChange: 1.04 },
@@ -54,7 +54,7 @@ export default function QueryPage() {
         <div className="p-6 bg-gradient-to-r from-pink-200 to-pink-100 border-b border-pink-300">
           <div className="flex justify-between items-center mb-4">
             <Briefcase className="text-pink-800 cursor-pointer hover:text-pink-600 transition-colors" size={24} />
-            <img src="../../public/ft_logo.jpg" alt="FT Logo" className="h-14 w-auto" />
+            <img src={ftLogo} alt="FT Logo" className="h-14 w-auto" />
             <User className="text-pink-800 cursor-pointer hover:text-pink-600 transition-colors" size={24} />
           </div>
           <div className="relative">
@@ -76,8 +76,8 @@ export default function QueryPage() {
             >
               <div className="flex items-center space-x-4 flex-grow mr-4">
                 <span className="text-xl font-bold text-pink-800 w-20">{stock.ticker}</span>
-                <div className="flex-grow h-12">
-                  <ResponsiveContainer width="100%" height="100%">
+                <div className="flex-grow h-12" >
+                  <ResponsiveContainer width="94%" height="100%">
                     <LineChart data={stock.chartData}>
                       <Line
                         type="monotone"

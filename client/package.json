@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && npm run copy-to-server",
     "preview": "vite preview",
-    "build:css": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+    "copy-to-server": "cp -r dist ../server/"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",

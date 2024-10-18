@@ -5,7 +5,8 @@ module.exports = {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './index.html',
   ],
   theme: {
     container: {
@@ -85,4 +86,8 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  safelist: [
+    'flex-grow',
+    'h-12',
+  ],
 }
